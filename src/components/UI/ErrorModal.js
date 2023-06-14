@@ -6,13 +6,9 @@ import Button from './Button';
 
 function ErrorModal(props){
 
-    function buttonClickHandler(){
-
-    }
-
     return (
         <div>
-            <div className={classes.backdrop} />
+            <div className={classes.backdrop} onClick={props.onConfirm} />
             <Card className={classes.modal}>
                 <header className={classes.header}>
                     <h2>{props.title}</h2>
@@ -21,7 +17,7 @@ function ErrorModal(props){
                     <p>{props.message}</p>
                 </div>
                 <footer className={classes.actions}>
-                    <Button onClick={buttonClickHandler}>Ok</Button>
+                    <Button onClick={props.onConfirm}>Ok</Button>
                 </footer>
             </Card>
         </div>
